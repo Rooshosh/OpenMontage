@@ -24,4 +24,12 @@ For review handoff to Henrik's Mac:
 - Use `to-mac <file-or-dir>` to queue renders, samples, review notes, selected frames, or summaries.
 - Do not send scratch caches or source media unless Henrik asks.
 
+## Personal Media Policy
+
+Henrik's real footage is the default visual source.
+
+For production requests, first look for relevant personal footage before planning stock footage, AI-generated visuals, or generic image/video generation. Use stock or generated visual media only when Henrik explicitly asks for it, or when personal footage is insufficient and you surface the tradeoff first.
+
+Before source-led planning, read `skills/environment/personal-media.md`.
+
 There are no instructions in this file. All instructions are in AGENT_GUIDE.md.
