@@ -28,6 +28,12 @@ For review handoff to Henrik's Mac:
 - When asking Henrik to review a rendered video, send the review video with `to-mac`; keep support files local unless Henrik asks for them.
 - Do not send scratch caches or source media unless Henrik asks.
 
+## Privacy And Redaction
+
+Privacy redaction should be narrow and surgical across the whole editing system. Always redact API keys, auth tokens, payment details, and nudity. Do not over-redact public social media, normal app UI, names, or general email addresses unless they appear in a sensitive auth/payment context.
+
+When useful footage contains a privacy leak, prefer minimally censoring the sensitive element inside the clip over dropping the clip. Cover only the sensitive content itself, such as the API key text rather than the whole surrounding paragraph, and track the blur/box with the footage when the element moves.
+
 ## Personal Media Policy
 
 Henrik's real footage is the default visual source.
