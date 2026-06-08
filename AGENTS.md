@@ -15,9 +15,9 @@ Runtime facts relevant to production decisions:
 - You are running inside a Docker container on Henrik's Hetzner EX44 server.
 - Working repo: `/home/agent/openmontage`.
 - Persistent home: `/home/agent`.
-- The server has an Intel iGPU exposed by the host for video acceleration, but no discrete NVIDIA/CUDA-style GPU configured for OpenMontage.
-- Treat the iGPU as an FFmpeg acceleration path for video decode/encode/scale work, not as general AI compute.
-- Do not assume VAAPI/QSV acceleration is available inside the container until you verify `/dev/dri` and the relevant FFmpeg encoder path.
+- The container has access to the server's Intel iGPU through `/dev/dri` for video acceleration, but no discrete NVIDIA/CUDA-style GPU configured for OpenMontage.
+- Treat the iGPU as an optional FFmpeg acceleration path for video decode/encode/scale work, not as general AI compute.
+- VAAPI/QSV are tools you may choose when they fit the job. Verify the relevant FFmpeg path before relying on it for an important render.
 - For GPU-heavy AI work, first check available local/container capabilities. If the task clearly needs cloud GPU, surface that as a production decision before proceeding.
 - Prefer normal project/dependency changes over manual container installs. Manual installs are acceptable for quick experiments, but durable requirements should be moved into the Dockerfile or project dependency files.
 
