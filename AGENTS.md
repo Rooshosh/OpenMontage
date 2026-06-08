@@ -15,7 +15,7 @@ Runtime facts relevant to production decisions:
 - You are running inside a Docker container on Henrik's Hetzner EX44 server.
 - Working repo: `/home/agent/openmontage`.
 - Persistent home: `/home/agent`.
-- The container has access to the server's Intel iGPU through `/dev/dri`; no other GPU is configured for OpenMontage.
+- The container has access to the server's Intel iGPU through `/dev/dri`; the machine has no other GPU.
 - For GPU-heavy AI work, first check available local/container capabilities. If the task clearly needs cloud GPU, surface that as a production decision before proceeding.
 - Prefer normal project/dependency changes over manual container installs. Manual installs are acceptable for quick experiments, but durable requirements should be moved into the Dockerfile or project dependency files.
 
