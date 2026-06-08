@@ -24,7 +24,7 @@ Runtime facts relevant to production decisions:
 
 For review handoff to Henrik's Mac:
 
-- Use `to-mac <file> [subpath/]` to queue renders, samples, review notes, selected frames, or summaries.
+- Use `to-mac <file> [subpath/]` to send files to Henrik's Mac.
 - Do not send scratch caches or source media unless Henrik asks.
 
 ## Personal Media Policy
