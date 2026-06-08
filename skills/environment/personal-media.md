@@ -12,6 +12,14 @@ Use stock or generated visual media only when Henrik explicitly asks for it, or 
 
 Do not plan around metadata alone. Inspect candidate files directly before committing them to a concept, scene plan, or asset manifest.
 
+## Editorial Preferences
+
+Privacy redaction should be narrow and surgical. Always redact API keys, auth tokens, payment details, and nudity. Do not over-redact public social media, normal app UI, names, or general email addresses unless they appear in a sensitive auth/payment context.
+
+When useful footage contains a privacy leak, prefer minimally censoring the sensitive element inside the clip over dropping the clip. Cover only the sensitive content itself, such as the API key text rather than the whole surrounding paragraph, and track the blur/box with the footage when the element moves.
+
+For large or high-resolution source videos, prefer trimming the needed segment first, then downscaling that segment into the project workspace. Henrik's normal outputs do not need to exceed 1080p, so avoid processing entire long 4K originals when only a short segment is needed. Leave `/media` untouched.
+
 ## Access
 
 Source media is mounted read-only at `/media`.
