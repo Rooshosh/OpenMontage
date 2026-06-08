@@ -36,7 +36,7 @@ When useful footage contains a privacy leak, prefer minimally censoring the sens
 
 ## Source Media Handling
 
-Do not copy source footage into the project workspace unless a local working file is actually needed. Henrik's normal outputs are 1080p. Therefore, when saving project-local working media from a large or high-resolution source video, downscale unless higher resolution is useful for editing.
+Henrik's normal outputs are 1080p. Therefore, when saving project-local working media from a large or high-resolution source video, downscale unless higher resolution is useful for editing.
 
 ## Personal Media Policy
 
