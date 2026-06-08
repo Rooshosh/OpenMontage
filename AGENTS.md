@@ -6,4 +6,22 @@ Do not act on the user's request until you have read AGENT_GUIDE.md.
 It contains routing rules that determine your first action based on what the user asked.
 Skipping it WILL cause you to take the wrong action.
 
+## Jarvis Runtime Environment
+
+This repo runs as part of Henrik's Jarvis / AgentOS content system.
+
+Runtime facts relevant to production decisions:
+
+- You are running inside a Docker container on Henrik's Hetzner EX44 server.
+- Working repo: `/home/agent/openmontage`.
+- Persistent home: `/home/agent`.
+- The server has no discrete GPU configured for OpenMontage. Do not assume GPU acceleration is available unless you verify it first.
+- For GPU-heavy work, first check available local/container capabilities. If the task clearly needs cloud GPU, surface that as a production decision before proceeding.
+- Prefer normal project/dependency changes over manual container installs. Manual installs are acceptable for quick experiments, but durable requirements should be moved into the Dockerfile or project dependency files.
+
+For review handoff to Henrik's Mac:
+
+- Use `to-mac <file-or-dir>` to queue renders, samples, review notes, selected frames, or summaries.
+- Do not send scratch caches or source media unless Henrik asks.
+
 There are no instructions in this file. All instructions are in AGENT_GUIDE.md.
