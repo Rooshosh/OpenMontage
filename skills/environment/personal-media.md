@@ -12,10 +12,6 @@ Use stock or generated visual media only when Henrik explicitly asks for it, or 
 
 Do not plan around metadata alone. Inspect candidate files directly before committing them to a concept, scene plan, or asset manifest.
 
-## Footage Prep
-
-For large or high-resolution source videos, prefer trimming the needed segment first, then downscaling that segment into the project workspace. Henrik's normal outputs do not need to exceed 1080p, so avoid processing entire long 4K originals when only a short segment is needed. Leave `/media` untouched.
-
 ## Access
 
 Source media is mounted read-only at `/media`.
