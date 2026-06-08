@@ -36,7 +36,7 @@ When useful footage contains a privacy leak, prefer minimally censoring the sens
 
 ## Source Media Handling
 
-Do not copy source footage into the project workspace unless a local working file is actually needed. When creating project-local working media from a large or high-resolution source video, prefer trimming the needed segment first, then downscaling that segment. Henrik's normal outputs are 1080p, so avoid processing entire long 4K originals when only a short 1080p segment is needed. Keep higher resolution only when it is useful for reframing, zooming, OCR, stabilization, or another specific edit need.
+Do not copy source footage into the project workspace unless a local working file is actually needed. When saving project-local working media from a large or high-resolution source video, Henrik's normal outputs are 1080p, so downscale unless higher resolution is useful for reframing, zooming, OCR, stabilization, or another specific edit need.
 
 ## Personal Media Policy
 
