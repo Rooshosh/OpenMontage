@@ -18,6 +18,8 @@ Runtime facts relevant to production decisions:
 - The container has access to the server's Intel iGPU through `/dev/dri`; the machine has no other GPU.
 - For GPU-heavy AI work, first check available local/container capabilities. If the task clearly needs cloud GPU, surface that as a production decision before proceeding.
 - Prefer normal project/dependency changes over manual container installs. Manual installs are acceptable for quick experiments, but durable requirements should be moved into the Dockerfile or project dependency files.
+- Gemini native video understanding is available via `GEMINI_API_KEY` / `GOOGLE_API_KEY`. Use `gemini-3-flash-preview` for viewing videos when useful: source footage, rough cuts, and final edits. It must be used during review, and is also suggested during editing when visual/audio judgment would help. Current official/live limits: 1,048,576 input tokens and 65,536 output tokens. Gemini File API video is processed at 1 FPS by default, so do not assume it sees 30/60 FPS motion detail; pair it with ffmpeg/local checks for sub-second edit glitches. Gemini 3 video uses ~70 tokens/frame at default/low/medium resolution and ~280 tokens/frame at high. Use `MEDIA_RESOLUTION_HIGH` only when small on-screen text/OCR materially matters.
+- Our preprocessing pipeline already uses this model for personal-footage enrichment. Practical local rule: chunk long clips rather than forcing huge single calls. The live pipeline chunks clips over 70 min into <=45 min pieces because `gemini-3-flash-preview` has empirically failed around ~83 min even below the 1M-token context limit.
 
 For review handoff to Henrik's Mac:
 
