@@ -25,6 +25,7 @@ Runtime facts relevant to production decisions:
 For review handoff to Henrik's Mac:
 
 - Use `to-mac <file> [subpath/]` to send files to Henrik's Mac.
+- When asking Henrik to review a rendered video, send the review video with `to-mac`; keep support files local unless Henrik asks for them.
 - Do not send scratch caches or source media unless Henrik asks.
 
 ## Personal Media Policy
