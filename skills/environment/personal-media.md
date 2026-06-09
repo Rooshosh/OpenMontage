@@ -14,13 +14,20 @@ Do not plan around metadata alone. Inspect candidate files directly before commi
 
 ## Access
 
-Source media is mounted read-only at `/media`.
+Full-resolution source media is mounted read-only at `/media`.
+
+Permanent browse derivatives are mounted read-only at `/var/content-previews`.
+They match the `preview_path` values in Postgres and are organized as
+`{source_table}/{id}.mp4|.jpg` plus `{id}.thumb.jpg`. Use these previews for
+browsing, source selection, thumbnail inspection, and quick visual checks.
 
 The Postgres DSN is available as `CONTENT_DB_DSN`.
 
 Postgres is the content-system database. It contains enriched metadata derived from Henrik's personal media, in addition to operational tables for ingest/preprocessing jobs. For footage discovery, start with the media/enrichment tables rather than job-control state.
 
-If selected source bytes need hydration, run:
+Only hydrate full-resolution source bytes when the original is needed for an
+edit, crop, export, or detailed frame/audio work. If selected source bytes need
+hydration, run:
 
 ```bash
 r2-fetch /media/...
@@ -29,9 +36,9 @@ r2-fetch /media/...
 ## Process
 
 1. Translate the brief into concrete footage needs: people, places, activities, objects, moods, dates, trips, events, visual motifs.
-2. Explore Postgres and `/media` to find candidate personal footage.
-3. Inspect promising files directly before using them in a plan.
-4. Hydrate missing or archived files with `r2-fetch` when needed.
+2. Explore Postgres and preview paths to find candidate personal footage.
+3. Inspect promising preview files directly before using them in a plan.
+4. Hydrate missing or archived originals with `r2-fetch` only when edit-quality source bytes are needed.
 5. Build a source inventory before planning visuals.
 
 ## Output
@@ -48,6 +55,7 @@ When proposing a personal-footage edit, report:
 
 - Using stock or generated visuals before checking Henrik's personal footage.
 - Planning from Postgres metadata without inspecting the actual file.
+- Hydrating multi-GB originals just to browse thumbnails or low-resolution previews.
 - Treating source media as disposable project assets.
 - Copying source media into project folders when a referenced source path or derived render asset would be enough.
 - Hiding a weak personal-footage match instead of surfacing the gap and recommending a fallback.
